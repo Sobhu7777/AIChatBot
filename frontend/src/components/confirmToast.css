@@ -1,0 +1,110 @@
+/* confirmToast.css */
+.confirm-toast-wrapper {
+  background: transparent !important;
+  box-shadow: none !important;
+  pointer-events: none; /* disable clicks outside */
+}
+
+.confirm-toast-overlay {
+  position: fixed;
+  top: -216px;
+  left: -523px;
+  width: 100vw;
+  height: 156vh;
+  backdrop-filter: blur(6px);
+  background-color: rgba(255, 255, 255, 0.25);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: all;
+  animation: fadeInBackdrop 0.3s ease-out forwards;
+}
+
+.confirm-toast-modal {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 380px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: popUpIn 0.25s ease-out forwards;
+}
+
+.confirm-toast-message {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  color: #333;
+}
+
+.confirm-toast-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.confirm-btn {
+  background-color: #ef4444;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.confirm-btn:hover {
+  background-color: #dc2626;
+}
+
+.cancel-btn {
+  background-color: #e5e7eb;
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.cancel-btn:hover {
+  background-color: #d1d5db;
+}
+
+
+@keyframes fadeInBackdrop {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0);
+}
+  to {
+    opacity: 1;
+    backdrop-filter: blur(6px);
+  }
+}
+
+@keyframes PopUpIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+}
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut{
+  from {
+    opacity: 1;
+}
+  to {
+    opacity: 0;
+  }
+}
+
+

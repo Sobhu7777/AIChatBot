@@ -1,0 +1,44 @@
+.user-modal {
+  position: absolute;
+  top: 3.5rem;
+  right: 1rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 220px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  font-family: 'Inter', sans-serif;
+}
+
+#profile-icon {
+  font-size: 1.5rem;
+  color: #6b7280;
+}
+
+.modal-name {
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #6b7280;
+}
+
+.modal-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #111827;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.modal-item:hover {
+  background-color: #f3f4f6;
+}
+
+.modal-item svg {
+  font-size: 1.4rem;
+  color: #4f46e5;
+}

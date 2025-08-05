@@ -1,0 +1,205 @@
+/* Signup.css */
+html,body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.signup-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+
+.signup-info {
+  flex: 1;
+  min-width: 300px;
+  background: linear-gradient(to bottom right, #4f46e5, #ec4899);
+  padding: 4rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signup-info h1 {
+  font-size: 2.75rem;
+  font-weight: 700;
+}
+
+.chat-bubble {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin: auto;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.chat-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  padding: 0.2rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.chat-text {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: #f3f4f6;
+}
+
+.feature-list {
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+  color: #e5e7eb;
+  margin-bottom: 1rem;
+}
+
+.chat-footer {
+  font-style: italic;
+  color: #d1d5db;
+}
+
+.signup-form {
+  flex: 1;
+  background: white;
+  min-width: 300px;
+  padding: 4rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signup-form h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.signup-form .form-label {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.4rem;
+}
+
+.signup-form .form-control {
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+.signup-form .form-control:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.25);
+  outline: none;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  padding-right: 3rem;
+}
+
+.password-toggle {
+  position: absolute;
+  margin: 1rem 0rem 1rem 1rem;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.get-started-btn {
+  background-color: #4f46e5;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.8rem;
+  border-radius: 12px;
+  transition: background 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  width: 100%;
+}
+
+.get-started-btn:hover {
+  background-color: #4338ca;
+}
+
+.text-muted {
+  color: #6b7280 !important;
+}
+
+/* 🌐 Responsive Design */
+
+@media (max-width: 992px) {
+  .signup-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .signup-info,.signup-form{
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .signup-info h1 {
+    font-size: 2rem;
+  }
+
+  .signup-form h3 {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .signup-info {
+    padding: 2rem 1.5rem;
+  }
+
+  .signup-info h1 {
+    font-size: 1.8rem;
+  }
+
+  .chat-bubble {
+    padding: 1rem;
+  }
+
+  .signup-form {
+    padding: 2rem 1.5rem;
+  }
+
+  .signup-form h3 {
+    font-size: 1.25rem;
+  }
+
+  .form-control {
+    font-size: 0.9rem;
+    padding: 0.65rem 0.9rem;
+  }
+
+  .password-toggle {
+    font-size: 1rem;
+  }
+
+  .get-started-btn {
+    font-size: 0.95rem;
+    padding: 0.7rem;
+  }
+} 

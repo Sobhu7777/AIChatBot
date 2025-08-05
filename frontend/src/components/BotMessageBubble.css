@@ -1,0 +1,91 @@
+.bot-bubble {
+  display: flex;
+  align-items: flex-start;
+  margin: 1rem 0;
+  gap: 0.75rem;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+/* Avatar */
+.bot-profile-pic {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Message bubble */
+.bot-message-content {
+  background: #f1f1f1;
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  max-width: 75%;
+  word-wrap: break-word;
+  word-break: break-word;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+}
+
+/* Meta like name/domain */
+.bot-meta {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 576px) {
+  .bot-bubble {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .bot-profile-pic {
+    width: 36px;
+    height: 36px;
+  }
+
+  .bot-message-content {
+    max-width: 90%;
+    font-size: 0.9rem;
+    padding: 0.65rem 0.9rem;
+    border-radius: 12px;
+  }
+
+  .bot-meta {
+    font-size: 0.8rem;
+  }
+}
+
+/* Optional: entry animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .bot-bubble {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bot-profile-pic {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+
+  .bot-message-content {
+    max-width: 100%;
+  }
+}
+
