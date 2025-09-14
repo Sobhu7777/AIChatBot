@@ -114,7 +114,6 @@ html,body{
 
 .password-toggle {
   position: absolute;
-  margin: 1rem 0rem 1rem 1rem;
   top: 50%;
   right: 1rem;
   transform: translateY(-50%);
@@ -153,28 +152,26 @@ html,body{
     height: auto;
   }
 
-  .signup-info,.signup-form{
+  .signup-info, .signup-form {
     width: 100%;
     padding: 2rem;
     text-align: center;
   }
 
   .signup-info h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
+}
 
-  .signup-form h3 {
-    padding: 1.25rem;
+@media (max-width: 768px) {
+  .signup-info h1 {
+    font-size: 1.8rem;
   }
 }
 
 @media (max-width: 576px) {
   .signup-info {
     padding: 2rem 1.5rem;
-  }
-
-  .signup-info h1 {
-    font-size: 1.8rem;
   }
 
   .chat-bubble {
@@ -202,4 +199,4 @@ html,body{
     font-size: 0.95rem;
     padding: 0.7rem;
   }
-} 
+}
