@@ -66,7 +66,6 @@ const Sidebar = () => {
   useEffect(() => {
     fetchAllChats();
     fetchUserInfo();
-    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {

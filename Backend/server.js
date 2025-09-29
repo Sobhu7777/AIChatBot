@@ -61,9 +61,9 @@ io.on('connection', (socket) => {
                     ];
 
                     const titleRes = await axios.post(
-                        'https://openrouter.ai/api/v1/chat/completions',
+                        'https://openrouter.ai/api/v1',
                         {
-                            model: 'deepseek/deepseek-chat-v3-0324:free',
+                            model: 'deepseek/deepseek-chat-v3.1:free',
                             messages: titlePrompt,
                             max_tokens: 20
                         },
