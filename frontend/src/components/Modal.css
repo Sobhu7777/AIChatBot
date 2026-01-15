@@ -42,3 +42,9 @@
   font-size: 1.4rem;
   color: #4f46e5;
 }
+@media (max-width: 768px) {
+.user-modal {
+    top: 30.2rem;
+    right: 2rem;
+  }
+}
