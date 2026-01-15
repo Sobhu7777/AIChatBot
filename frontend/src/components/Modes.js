@@ -190,7 +190,6 @@ const Modes = () => {
     <Container className="modes-container py-5">
       <div className="sticky-content">
         <h1 className="text-center modes-title mb-4">Modes</h1>
-      <div className="sticky-content"></div>
       <p className="text-center modes-description mb-5">
         Modes is a flagship feature designed to offer specialized experiences across domains like writing, cooking, fitness, and more. Pick a mode and enhance your AI journey!
       </p>

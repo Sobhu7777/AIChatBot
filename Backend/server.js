@@ -34,7 +34,7 @@ io.on('connection', (socket) => {
             const response = await axios.post(
                 'https://openrouter.ai/api/v1/chat/completions',
                 {
-                    model: 'deepseek/deepseek-chat-v3-0324:free',
+                    model: 'tngtech/deepseek-r1t2-chimera:free',
                     messages: history,
                     max_tokens: 300
                 },
@@ -63,7 +63,7 @@ io.on('connection', (socket) => {
                     const titleRes = await axios.post(
                         'https://openrouter.ai/api/v1',
                         {
-                            model: 'deepseek/deepseek-chat-v3.1:free',
+                            model: 'tngtech/deepseek-r1t2-chimera:free',
                             messages: titlePrompt,
                             max_tokens: 20
                         },

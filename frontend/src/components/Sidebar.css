@@ -1,12 +1,13 @@
 .sidebar-container {
   width: 280px;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   background-color: #f8f9fc;
   border-right: 1px solid #ddd;
   font-family: 'Segoe UI', sans-serif;
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 /* Styles for the desktop collapsed state */
@@ -316,7 +317,7 @@
     top: 0;
     left: -280px; /* Hidden off-screen */
     height: 100dvh;
-    z-index: 1000;
+    z-index: 1002;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
   }
   

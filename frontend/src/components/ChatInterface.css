@@ -5,12 +5,13 @@ body, html {
 }
 
 .chat-container {
-  width: 80%;
+  flex: 1;
+  min-width: 0;
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   background-color: #fff;
 }
@@ -149,7 +150,6 @@ body, html {
 @media (min-width: 992px) {
   .chat-container{
     margin-right: 0;
-    width: 100%;
     max-width: 1200px;
   }
   .chat-box {
@@ -159,7 +159,6 @@ body, html {
 /* Tablets (<= 992px) */
 @media (max-width: 992px) {
   .chat-container {
-    width: 100%;
     padding: 0;
   }
 
@@ -184,7 +183,6 @@ body, html {
 
 @media (max-width: 576px) {
   .chat-container {
-    width: 100%;
     height: 100dvh;
     display: flex;
     flex-direction: column;

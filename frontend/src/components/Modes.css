@@ -1,14 +1,15 @@
-/* General container styling */
 .modes-container {
+  flex: 1;
+  min-width: 0;
   background-color: #f8f9fc;
-  padding: 10rem;
-  width: 100%;
-  max-width: 1350px;
+  padding: 2rem 4rem;
+  max-width: 1600px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  overflow:auto;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Title styles */
@@ -30,6 +31,8 @@
   top: -48px;
   z-index: 2;
   background-color: #f8f9fc;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 /* Nav tabs */
@@ -67,8 +70,8 @@
 /* Card styles */
 .mode-card {
   border: none;
-  background-color: rgb(183 182 182 / 19%);
-  border-radius: 15px;
+  background-color: #ffffff;
+  border-radius: 16px;
   overflow: hidden;
   transition: transform 0.3s ease;
 }
@@ -116,8 +119,8 @@
 
 @media (max-width: 992px) {
   .modes-container {
-    padding: 3rem 1.5rem;
-    min-height: auto;
+    padding: 2rem 1.5rem;
+    height: 100vh;
   }
 
   .modes-tabs {
@@ -165,13 +168,10 @@
 
 @media (max-width: 576px) {
   .modes-container {
-    padding: 2rem 1rem;
-    min-height: 100dvh;
+    padding: 1.5rem 1rem;
+    height: 100dvh;
   }
 
-  .sticky-content {
-    top: -24px;
-  }
 
   .mode-card {
     flex-direction: column;

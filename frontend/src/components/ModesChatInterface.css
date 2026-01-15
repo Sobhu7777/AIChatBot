@@ -1,5 +1,6 @@
 .modes-chat-container {
-  width: 100%;
+  flex: 1;
+  min-width: 0;
   max-width: 1350px;
   margin: 0 auto;
   display: flex;

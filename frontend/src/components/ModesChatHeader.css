@@ -90,3 +90,17 @@
   font-size: 1rem;
 }
 
+@media (max-width: 768px) {
+  .back-button {
+    display: none;
+  }
+  
+  .mode-chat-header {
+    padding-left: 3.5rem;
+  }
+
+  .mode-profile-pic{
+    margin-left: 1rem;
+  }
+}
+
