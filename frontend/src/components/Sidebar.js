@@ -190,7 +190,7 @@ const Sidebar = () => {
       >
         <div className="sidebar-header">
           <div className="sidebar-top-row">
-            <h2 className="chat-title">CHAT A.I+</h2>
+            <h2 className="chat-title">VYOM +</h2>
             <button className="collapse-btn" onClick={toggleSidebar}>
               <TbLayoutSidebarLeftCollapse className="collapse-icon" />
             </button>

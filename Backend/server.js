@@ -26,6 +26,15 @@ mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("Connected to MongoDB"))
     .catch((err) => console.log(err));
 
+// Helper Function: Generate Chat Title (Simple Method)
+const generateChatTitle = (userMsg) => {
+    if (!userMsg) return 'New Chat';
+    // Take the first 5 words
+    const title = userMsg.trim().split(/\s+/).slice(0, 5).join(' ');
+    // Capitalize first letter
+    return title.charAt(0).toUpperCase() + title.slice(1);
+};
+
 io.on('connection', (socket) => {
     console.log('User connected');
 
@@ -35,8 +44,7 @@ io.on('connection', (socket) => {
                 'https://openrouter.ai/api/v1/chat/completions',
                 {
                     model: 'tngtech/deepseek-r1t2-chimera:free',
-                    messages: history,
-                    max_tokens: 300
+                    messages: history
                 },
                 {
                     headers: {
@@ -48,39 +56,19 @@ io.on('connection', (socket) => {
 
             const botMsg = response.data?.choices?.[0]?.message?.content || "🤖 Sorry, I couldn’t understand. Try again!";
 
+            // Save message to DB and generate title if new chat
             if (messageId && userMsg) {
                 const chat = await ChatMessage.findById(messageId);
-                const isFirstMessage = chat.conversation.length === 0;
-
-                chat.conversation.push({ userMsg, botMsg });
-
-                if (isFirstMessage) {
-                    const titlePrompt = [
-                        ...history,
-                        { role: 'system', content: 'Now generate a short 3-5 word title that best describes this conversation.' }
-                    ];
-
-                    const titleRes = await axios.post(
-                        'https://openrouter.ai/api/v1',
-                        {
-                            model: 'tngtech/deepseek-r1t2-chimera:free',
-                            messages: titlePrompt,
-                            max_tokens: 20
-                        },
-                        {
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Authorization': `Bearer ${process.env.DeepSeek_API_KEY}`
-                            }
-                        }
-                    );
-
-                    const title = titleRes.data?.choices?.[0]?.message?.content?.replace(/^"|"$/g, '')?.trim();
-                    chat.name = title || 'Untitled Chat';
+                if (chat) {
+                    chat.conversation.push({ userMsg, botMsg });
+                    
+                    // If this is the first message (or title is default), generate a name
+                    if (chat.conversation.length === 1 || chat.name === 'Untitled Chat') {
+                        chat.name = generateChatTitle(userMsg);
+                        io.emit('chat renamed', { chatId: chat._id, name: chat.name });
+                    }
+                    await chat.save();
                 }
-
-                await chat.save();
-                io.emit('chat renamed', { chatId: chat._id, name: chat.name }); // to render the new chat name in Sidebar
             }
 
             socket.emit('chat message', { from: 'bot', botMsg });
