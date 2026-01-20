@@ -11,8 +11,9 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server, {
     cors: {
-        origin: 'http://localhost:3000',
-        methods: ['GET', 'POST']
+        origin: ['http://localhost:3000', 'https://vyom-ten.vercel.app'],
+        methods: ['GET', 'POST'],
+        credentials: true
     }
 });
 
