@@ -4,6 +4,7 @@ import "./ChatInterface.css";
 import BotMessageBubble from "./BotMessageBubble";
 import ChatContext from "../Context/Chats/ChatContext";
 import AuthContext from "../Context/Authorisation/AuthContext";
+import API_BASE_URL from "../config";
 
 function ChatInterface() {
   const { chat, setChat, startMessage, fetchChat, messages, setMessages,fetchAllChats} = useContext(ChatContext);
@@ -46,7 +47,7 @@ function ChatInterface() {
 
   // WebSocket setup
   useEffect(() => {
-    socketRef.current = io("http://localhost:5000");
+    socketRef.current = io(API_BASE_URL);
 
     socketRef.current.on("chat message", ({ from,botMsg }) => {
       // If the message is from the bot, update the messages state

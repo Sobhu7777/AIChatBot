@@ -16,6 +16,7 @@ import { BiSolidConversation } from "react-icons/bi";
 import ChatContext from "../Context/Chats/ChatContext";
 import AuthContext from "../Context/Authorisation/AuthContext";
 import io from "socket.io-client";
+import API_BASE_URL from "../config";
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -69,7 +70,7 @@ const Sidebar = () => {
   }, []);
 
   useEffect(() => {
-    const socket = io("http://localhost:5000");
+    const socket = io(API_BASE_URL);
 
     socket.on("chat renamed", ({ chatId, name }) => {
       setAllChats((prevChats = []) =>
@@ -86,7 +87,7 @@ const Sidebar = () => {
   const fetchUserInfo = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/auth/getUser", {
+      const res = await fetch(`${API_BASE_URL}/api/auth/getUser`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

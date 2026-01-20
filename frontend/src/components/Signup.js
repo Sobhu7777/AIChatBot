@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import AuthContext from "../Context/Authorisation/AuthContext";
+import API_BASE_URL from "../config";
 
 const Signup = () => {
   const { signUp } = useContext(AuthContext);
@@ -24,7 +25,7 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/auth/CreateUser", {
+    const response = await fetch(`${API_BASE_URL}/api/auth/CreateUser`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

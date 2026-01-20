@@ -1,5 +1,6 @@
 import {useState}  from 'react';
 import ChatContext from './ChatContext';
+import API_BASE_URL from '../../config';
 
 const ChatState = (props) => {
   const [chat, setChat] = useState(null);  // full chat object
@@ -9,7 +10,7 @@ const ChatState = (props) => {
     'Content-Type': 'application/json',
     'auth-token': localStorage.getItem('token') 
   };
-  const host = 'http://localhost:5000';
+  const host = API_BASE_URL;
 
   // 1️⃣ Fetch chat from backend
   const fetchChat = async (chatId) => {

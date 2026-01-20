@@ -6,6 +6,7 @@ import ModesBotMessageBubble from "./ModesBotMessageBubble";
 import "./ModesChatInterface.css";
 import ChatContext from "../Context/Chats/ChatContext";
 import AuthContext from "../Context/Authorisation/AuthContext";
+import API_BASE_URL from "../config";
 
 export default function ModesChatInterface() {
     const { name } = useParams(); // get the name from the URL
@@ -52,7 +53,7 @@ export default function ModesChatInterface() {
 
   // WebSocket setup
   useEffect(() => {
-    socketRef.current = io("http://localhost:5000");
+    socketRef.current = io(API_BASE_URL);
 
     socketRef.current.on("chat message", ({ from,botMsg }) => {
       // If the message is from the bot, update the messages state
